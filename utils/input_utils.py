@@ -57,3 +57,17 @@ def demander_nombre(message, min_val=None, max_val=None)
                 range_message = f"inférieur ou égale a {max_val}."
 
 
+def demander_choix(message, options):
+    print(message)
+    for i in range(len(options)):
+        print(f"{i + 1}. {options[i]}")
+
+    choix_index = demander_nombre("Votre choix : ", 1, len(options))
+    return options[choix_index - 1]
+
+
+def load_fichier(chemin_fichier):
+    with open(chemin_fichier, 'r', encoding='utf-8') as f:
+        donnees = json.load(f)
+        return donnees
+
