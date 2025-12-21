@@ -26,6 +26,7 @@ def afficher_personnage(joueur):
                 else:
                     liste_noms.append(str(item))
 
+        print(f"{cle} : {', '.join(liste_noms)}")
 def modifier_argent(joueur, montant):
     joueur["Argent"] = joueur["Argent"] + montant
 
