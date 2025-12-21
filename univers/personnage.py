@@ -19,9 +19,12 @@ def afficher_personnage(joueur):
             for attr_cle in valeur:
                 print(f"  {attr_cle}: {valeur[attr_cle]}")
         elif cle == "Inventaire" or cle == "Sortilèges":
-            print(f"{cle} : {', '.join(valeur)}")
-        else:
-            print(f"{cle} : {valeur}")
+            liste_noms = []
+            for item in valeur:
+                if isinstance(item, dict):
+                    liste_noms.append(item['nom'])
+                else:
+                    liste_noms.append(str(item))
 
 def modifier_argent(joueur, montant):
     joueur["Argent"] = joueur["Argent"] + montant

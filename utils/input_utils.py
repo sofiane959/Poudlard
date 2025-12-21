@@ -26,8 +26,8 @@ def demander_nombre(message, min_val=None, max_val=None):
 
 def demander_choix(message, options):
     print(message)
-    for i, options in enumerate(options, 1):
-        print(f"{i}. {options}")
+    for i, option in enumerate(options, 1):
+        print(f"{i}. {option}")
 
     choix = demander_nombre("Votre choix : ", 1, len(options))
     return options[choix - 1]

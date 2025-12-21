@@ -34,7 +34,7 @@ def lancer_choix_menu():
             input("\n✨ Appuyez sur Entrée pour voyager vers Poudlard (Chapitre 2)...")
             lancer_chapitre_2(joueur)
 
-            input("\n✨ Appuyez sur Entrée pour commencer les cours (Chapitre 3)..."),
+            input("\n✨ Appuyez sur Entrée pour commencer les cours (Chapitre 3)...")
             lancer_chapitre_3(joueur, maisons)
 
         elif choix == "2":

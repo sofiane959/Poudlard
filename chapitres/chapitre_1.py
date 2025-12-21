@@ -1,5 +1,3 @@
-import sys
-sys.path.append("..")
 from utils.input_utils import demander_texte, demander_nombre, demander_choix, load_fichier
 from univers.personnage import initialiser_personnage, afficher_personnage, modifier_argent, ajouter_objet
 
@@ -32,21 +30,21 @@ def recevoir_lettre():
     choix = demander_choix("Voulez-vous ouvrir la lettre ?", ["Oui, bien sûr !", "Non je refuse. "])
 
     if choix == "Non je refuse. ":
-        print("Vous déchirrez la lettre. Vous resterez un Moldu pour toujours. Fin du jeu. ")
+        print("Vous déchirez la lettre. Vous resterez un Moldu pour toujours. Fin du jeu. ")
         exit()
     else:
         print("Vous lisez la lettre avec émerveillement. Vous êtes admis à Poudlard !")
 
 def rencontrer_hagrid(joueur):
     print("\n🏠 Quelqu'un frappe à la porte... BOOM ! C'est Hagrid !")
-    print(f"Hagrid: 'Salut{joueur['Prenom']} ! Tu es un sorcier. '")
+    print(f"Hagrid: 'Salut {joueur['Prenom']} ! Tu es un sorcier. '")
     choix = demander_choix("Voulez vous suivre Hagrid au Chemin des Traverse ?", ["Oui", "Non"])
     if choix == "Non":
         print("Hagrid insiste et vous emmène de force (gentiment) !")
 
 def acheter_fournitures(joueur):
     print("\n🏙️ BIENVENUE SUR LE CHEMIN DE TRAVERSE")
-    catalogue = load_fichier("data:inventaire.json")
+    catalogue = load_fichier("data/inventaire.json")
 
     if not catalogue:
         return
@@ -99,7 +97,7 @@ def acheter_fournitures(joueur):
     choix_animal = demander_choix("Quel animal choisissez-vous ?", animaux)
 
     prix_animal = int(choix_animal.split('(')[1].replace(')', ''))
-    nom_animal_seul = choix_animal.split('(')[0]
+    nom_animal_seul = choix_animal.split('(')[0].strip()
 
     if prix_animal <= joueur['Argent']:
         modifier_argent(joueur, -prix_animal)

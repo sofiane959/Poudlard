@@ -1,5 +1,3 @@
-import sys
-sys.path.append("...")
 from utils.input_utils import demander_choix, load_fichier
 from univers.maison import repartition_maison
 from univers.personnage import afficher_personnage
@@ -19,6 +17,20 @@ def rencontrer_amis(joueur):
     if choix == "Oui" :
         joueur['Attributs']['intelligence'] += 1
     else:
+        joueur['Attributs']['courage'] += 1
+
+    print("Un garçon blond au teint pâle entre.")
+    print("Drago: 'Mieux vaut bien choisir ses amis dès le départ, tu ne crois pas ?'")
+    choix_drago = demander_choix("Comment réagissez-vous ?",
+                                 ["Je lui serre la main poliment",
+                                  "Je l'ignore complètement",
+                                  "Je lui réponds avec arrogance"])
+
+    if choix_drago == "Je lui serre la main poliment":
+        joueur['Attributs']['ambition'] += 1
+    elif choix_drago == "Je l'ignore complètement":
+        joueur['Attributs']['loyauté'] += 1
+    elif choix_drago == "Je lui réponds avec arrogance":
         joueur['Attributs']['courage'] += 1
 
     print(f"Vos attributs ont évolué : {joueur['Attributs']}")

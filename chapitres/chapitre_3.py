@@ -1,6 +1,4 @@
-import sys
 import random
-sys.path.append("..")
 from utils.input_utils import load_fichier, demander_texte
 from univers.personnage import ajouter_objet, afficher_personnage
 from univers.maison import actualiser_points_maison, afficher_maison_gagnante
@@ -13,7 +11,7 @@ def apprendre_sorts(joueur, chemin_ficier="data/sorts.json"):
         return
 
     offensifs = [s for s in tous_les_sorts if s['type'] == 'Offensif']
-    defensifs = [s for s in tous_les_sorts if s['type'] == 'Defensif']
+    defensifs = [s for s in tous_les_sorts if s['type'] == 'Défensif']
     utilitaires = [s for s in tous_les_sorts if s['type'] == 'Utilitaire']
 
     sorts_appris = []
@@ -27,7 +25,7 @@ def apprendre_sorts(joueur, chemin_ficier="data/sorts.json"):
         print(f"✨ Vous appprenez : {sort['nom']} ({sort['type']}) - {sort['description']}")
         input("Appuyez sur Entrée...")
 
-def quiz_magie(joueur, maisons, chemin_fichier="data:quiz magie json") :
+def quiz_magie(joueur, maisons, chemin_fichier="data/quiz_magie.json") :
     print("\n❓ QUIZ DE MAGIE")
     questions = load_fichier(chemin_fichier)
 
@@ -45,7 +43,7 @@ def quiz_magie(joueur, maisons, chemin_fichier="data:quiz magie json") :
         print(f"\nQuestion {i}: {q['question']}")
         reponse = demander_texte("Votre réponse : ")
 
-        if reponse.lower() == q['question'].lower():
+        if reponse.lower() == q['reponse'].lower():
             print("✅ Bonne réponse ! (+25 points)")
             score_quiz += 25
         else:
