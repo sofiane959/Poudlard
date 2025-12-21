@@ -1,4 +1,3 @@
-ef
 afficher_menu_principal():
 print("AVENTURE A POUDELARD")
 print("1. Nouvelle Partie")
