@@ -1,5 +1,6 @@
 import json
 
+
 def demander_texte(message):
     while True:
         texte = input(message).strip()
@@ -7,7 +8,8 @@ def demander_texte(message):
             return texte
         print("Erreur: La saisie ne peut pas etre vide. ")
 
-def demander_nombre(message, min_val=None, max_val=None) :
+
+def demander_nombre(message, min_val=None, max_val=None):
     while True:
         saisie = input(message).strip()
 
@@ -21,9 +23,10 @@ def demander_nombre(message, min_val=None, max_val=None) :
         else:
             print("Erreur: Veuillez entrer un nombre valide. ")
 
+
 def demander_choix(message, options):
     print(message)
-    for i, options in enumerate(options, 1) :
+    for i, options in enumerate(options, 1):
         print(f"{i}. {options}")
 
     choix = demander_nombre("Votre choix : ", 1, len(options))
@@ -37,4 +40,4 @@ def load_fichier(chemin_fichier):
         return donnees
     except FileNotFoundError:
         print(f"Erreur : le fichier {chemin_fichier} est introuvable.")
-        return None
+        return []

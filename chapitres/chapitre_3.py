@@ -1,13 +1,11 @@
 import sys
 import random
-'from symbol import return_stmt'
-
 sys.path.append("..")
 from utils.input_utils import load_fichier, demander_texte
 from univers.personnage import ajouter_objet, afficher_personnage
 from univers.maison import actualiser_points_maison, afficher_maison_gagnante
 
-def apprendre_sorts(joueur, chemin_ficier="data:sorts.json"):
+def apprendre_sorts(joueur, chemin_ficier="data/sorts.json"):
     print("\n📚 COURS DE MAGIE")
     tous_les_sorts = load_fichier(chemin_ficier)
 
@@ -18,7 +16,9 @@ def apprendre_sorts(joueur, chemin_ficier="data:sorts.json"):
     defensifs = [s for s in tous_les_sorts if s['type'] == 'Defensif']
     utilitaires = [s for s in tous_les_sorts if s['type'] == 'Utilitaire']
 
-    sorts_appris = [random.choice(offensifs), random.choice(defensifs)]
+    sorts_appris = []
+    sorts_appris.append(random.choice(offensifs))
+    sorts_appris.append(random.choice(defensifs))
     random.shuffle(utilitaires)
     sorts_appris.extend(utilitaires[:3])
 

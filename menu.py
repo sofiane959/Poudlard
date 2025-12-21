@@ -1,7 +1,17 @@
-afficher_menu_principal():
-print("AVENTURE A POUDELARD")
-print("1. Nouvelle Partie")
-print("2. Quitter le jeu")
+from utils.input_utils import demander_texte
+from chapitres.chapitre_1 import lancer_chapitre_1
+from chapitres.chapitre_2 import lancer_chapitre_2
+from chapitres.chapitre_3 import lancer_chapitre_3
+
+
+
+def afficher_menu_principal():
+    print("\n" + "="*40)
+    print("🏰 MENU PRINCIPAL POUDELARD")
+    print("="*40)
+    print("1. Lancer l'aventure (Chapitres 1 à 3)")
+    print("2. Quitter le jeu")
+    print("="*40)
 
 
 def lancer_choix_menu():
@@ -12,25 +22,23 @@ def lancer_choix_menu():
         "Serdaigle": 0
     }
 
-    continuer = True
-    while continuer:
+    while True:
         afficher_menu_principal()
-        choix = input("Votre choix : ").strip()
+        choix = demander_texte("Votre choix : ")
 
         if choix == "1":
-            # On importe les chapitres seulement quand on lance la partie
-            from chapitres.chapitre_1 import lancer_chapitre_1
-            from chapitres.chapitre_2 import lancer_chapitre_2
-            from chapitres.chapitre_3 import lancer_chapitre_3
+            print("\n🚀 Lancement de l'aventure...")
 
-            # Enchaînement automatique des chapitres
-            personnage = lancer_chapitre_1()
-            if personnage:
-                lancer_chapitre_2(personnage)
-                lancer_chapitre_3(personnage, maisons)
+            joueur = lancer_chapitre_1()
+
+            input("\n✨ Appuyez sur Entrée pour voyager vers Poudlard (Chapitre 2)...")
+            lancer_chapitre_2(joueur)
+
+            input("\n✨ Appuyez sur Entrée pour commencer les cours (Chapitre 3)..."),
+            lancer_chapitre_3(joueur, maisons)
 
         elif choix == "2":
-            print("Au revoir !")
-            continuer = False
+            print("Au revoir et a bientôt dans le monde des sorciers !")
+            break
         else:
-            print("Choix invalide.")
+            print("❌ Choix invalide. Veuillez entrer 1 ou 2.")

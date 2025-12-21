@@ -1,7 +1,4 @@
 import sys
-
-'from utils.input_utils import demander_nombre'
-
 sys.path.append("..")
 from utils.input_utils import demander_texte, demander_nombre, demander_choix, load_fichier
 from univers.personnage import initialiser_personnage, afficher_personnage, modifier_argent, ajouter_objet
@@ -42,7 +39,7 @@ def recevoir_lettre():
 
 def rencontrer_hagrid(joueur):
     print("\n🏠 Quelqu'un frappe à la porte... BOOM ! C'est Hagrid !")
-    print(f"Hagrid: 'Salut{joueur['Prénom']} ! Tu es un sorcier. '")
+    print(f"Hagrid: 'Salut{joueur['Prenom']} ! Tu es un sorcier. '")
     choix = demander_choix("Voulez vous suivre Hagrid au Chemin des Traverse ?", ["Oui", "Non"])
     if choix == "Non":
         print("Hagrid insiste et vous emmène de force (gentiment) !")
@@ -91,6 +88,11 @@ def acheter_fournitures(joueur):
             modifier_argent(joueur, -prix)
             ajouter_objet(joueur, "Inventaire", nom_objet)
             print(f"🛒 Vous achetez : {nom_objet}")
+
+    for obj in obligatoires:
+        if obj not in joueur['Inventaire']:
+            print("Vous avez oublié un objet obligatoire ! Perdu.")
+            exit()
 
     print("\n🐾 Il vous reste un peu d'argent pour un animal. ")
     animaux = ["Chouette (20)", "Chat (15)", "Rat (10)", "Crapaud (5)"]
