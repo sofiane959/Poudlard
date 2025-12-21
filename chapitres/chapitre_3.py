@@ -3,9 +3,9 @@ from utils.input_utils import load_fichier, demander_texte
 from univers.personnage import ajouter_objet, afficher_personnage
 from univers.maison import actualiser_points_maison, afficher_maison_gagnante
 
-def apprendre_sorts(joueur, chemin_ficier="data/sorts.json"):
+def apprendre_sorts(joueur, chemin_fichier="data/sorts.json"):
     print("\n📚 COURS DE MAGIE")
-    tous_les_sorts = load_fichier(chemin_ficier)
+    tous_les_sorts = load_fichier(chemin_fichier)
 
     if not tous_les_sorts:
         return
@@ -22,7 +22,7 @@ def apprendre_sorts(joueur, chemin_ficier="data/sorts.json"):
 
     for sort in sorts_appris:
         ajouter_objet(joueur, "Sortilèges", sort)
-        print(f"✨ Vous appprenez : {sort['nom']} ({sort['type']}) - {sort['description']}")
+        print(f"✨ Vous apprenez : {sort['nom']} ({sort['type']}) - {sort['description']}")
         input("Appuyez sur Entrée...")
 
 def quiz_magie(joueur, maisons, chemin_fichier="data/quiz_magie.json") :
