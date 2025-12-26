@@ -13,13 +13,13 @@ def initialiser_personnage(nom, prenom, attributs):
 def afficher_personnage(joueur):
     print("\nProfil du personnage:")
     for cle in joueur:
+        liste_noms = []
         valeur = joueur[cle]
         if cle == "Attributs":
             print(f"{cle} :")
             for attr_cle in valeur:
                 print(f"  {attr_cle}: {valeur[attr_cle]}")
         elif cle == "Inventaire" or cle == "Sortilèges":
-            liste_noms = []
             for item in valeur:
                 if isinstance(item, dict):
                     liste_noms.append(item['nom'])
