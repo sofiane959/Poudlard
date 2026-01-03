@@ -121,6 +121,8 @@ def match_quidditch(joueur, maisons):
             print("\n✨ LE VIF D'OR EST APERCU !")
             equipe_gagnante_vif = attraper_vifdor(equipe_joueur, equipe_adverse)
             print("🏆 " + equipe_gagnante_vif['nom'] + " attraper le Vif d'Or ! (+150 points)")
+
+            break
         else:
             input("Appuyez sur Entrée pour continuer...")
 

@@ -38,7 +38,7 @@ def recevoir_lettre():
 def rencontrer_hagrid(joueur):
     print("\n🏠 Quelqu'un frappe à la porte... BOOM ! C'est Hagrid !")
     print(f"Hagrid: 'Salut {joueur['Prenom']} ! Tu es un sorcier. '")
-    choix = demander_choix("Voulez vous suivre Hagrid au Chemin des Traverse ?", ["Oui", "Non"])
+    choix = demander_choix("Voulez vous suivre Hagrid au Chemin de Traverse ?", ["Oui", "Non"])
     if choix == "Non":
         print("Hagrid insiste et vous emmène de force (gentiment) !")
 
