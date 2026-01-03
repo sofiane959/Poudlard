@@ -43,7 +43,7 @@ Fonctionnalités Principales :
   Semaine 4 :
     1. Moteur de match dans chapitre_4.py.
         a. Problème : Le match continuait jusqu'au tour 20 même si le Vif d'Or était attrapé.
-        b. Résolution : On avait oublié de placer l'instruction break. En se relisant mieux on a trouvé l'erreur et ajouter break pour que l'effet attendu arrive.
+        b. Résolution : On avait oublié de placer le changement pour la variabke match_termine. En se relisant mieux on a trouvé l'erreur et operer au changement de variable pour que l'effet attendu arrive.
 
   
   Tout au long du projet on a eu pas mal de difficulté avec Github ce qui rend notre travail tres peu comprehensible en suivant les commits 
@@ -72,6 +72,6 @@ Répartition des Tâches :
           Test de Répartition : Saisie de réponses "Serpentard" avec ambition élevée. Résultat : La maison est validée par le calcul des coefficients.
           <img width="1512" height="982" alt="test_Répartition-1" src="https://github.com/user-attachments/assets/0d5ff039-ac96-4162-bf48-8c2dca6283f4" />
           <img width="1512" height="982" alt="test_Répartition-2" src="https://github.com/user-attachments/assets/f4d36cb3-d977-4ab2-9381-914d846ad65e" />
-         Test de Quidditch : Capture du Vif d'Or au tour 5. Résultat : Le match s'arrête immédiatement avec +150 points pour l'équipe .
-         <img width="1512" height="982" alt="test_Vif-D&#39;Or" src="https://github.com/user-attachments/assets/51888d92-09ba-472f-a168-fee1c6dbee1e" />
+         Test de Quidditch : Capture du Vif d'Or au tour 10. Résultat : Le match s'arrête immédiatement avec +150 points pour l'équipe .
+         <img width="1512" height="982" alt="test_Vif D&#39;or" src="https://github.com/user-attachments/assets/f23f10df-42d3-4167-b686-83c3002ec3ce" />
 
