@@ -37,7 +37,7 @@ def rencontrer_amis(joueur):
 
 def mot_de_bienvenue():
     print("\n🏰 Vous arrivez à Poudlard. ")
-    print("Dumbledore: 'Bienveue à tous pour une nouvelle année !'")
+    print("Dumbledore: 'Bienvenue à tous pour une nouvelle année !'")
     input("Appuyez sur Entrée...")
 
 def ceremonie_repartition(joueur):
